@@ -4,3 +4,5 @@ export default interface Cat {
   favFoods: Array<string>; // or string[]
   birthYear: number;
 }
+
+

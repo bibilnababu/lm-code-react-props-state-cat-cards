@@ -5,6 +5,7 @@ import Footer from "./components/footer";
 import { useState } from "react";
 import Cat from "./data/cat";
 import CatCard from "./components/cat_card";
+
 function App(): JSX.Element {
   const [cats, setCats] = useState<Array<Cat>>([
     {
@@ -80,6 +81,23 @@ function App(): JSX.Element {
       birthYear: 2021,
     },
   ]);
+
+  // const CatCard: React.FC<CatCardProps> = (props) => {
+  //   console.log(
+  //     'CatCard receiving props from App?! Come in App?! 😸 Props received are: ',
+  //     props
+  //   );
+
+  //   return (
+  //     <div className='card'>
+  //       <h3 className='card__text card__header'>Mr Gwumpy</h3>
+  //       <p className='card__text'>Species: Cat</p>
+  //       <p className='card__text'>Favourite Food(s): Caviar</p>
+  //       <p className='card__text'>Birth Year: 1984</p>
+  //     </div>
+  //   );
+  // };
+  
   return (
     <>
       <Navbar />
@@ -87,10 +105,15 @@ function App(): JSX.Element {
 
       <main>
         <div className="cards__wrapper">
-          {/* <CatCard cat={undefined} /> */}
-          {cats.map((cat) => (
-            <CatCard key={cat.name} cat={cat} />
-          ))}
+       {cats.map((cat) => (
+		<CatCard
+			name={cat.name}
+			species={cat.species}
+			favFoods={cat.favFoods}
+			birthYear={cat.birthYear}
+		/>
+	))};
+  
         </div>
         <div></div>
       </main>
