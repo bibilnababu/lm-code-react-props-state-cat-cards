@@ -82,21 +82,7 @@ function App(): JSX.Element {
     },
   ]);
 
-  // const CatCard: React.FC<CatCardProps> = (props) => {
-  //   console.log(
-  //     'CatCard receiving props from App?! Come in App?! 😸 Props received are: ',
-  //     props
-  //   );
-
-  //   return (
-  //     <div className='card'>
-  //       <h3 className='card__text card__header'>Mr Gwumpy</h3>
-  //       <p className='card__text'>Species: Cat</p>
-  //       <p className='card__text'>Favourite Food(s): Caviar</p>
-  //       <p className='card__text'>Birth Year: 1984</p>
-  //     </div>
-  //   );
-  // };
+  
   
   return (
     <>
@@ -105,12 +91,13 @@ function App(): JSX.Element {
 
       <main>
         <div className="cards__wrapper">
-       {cats.map((cat) => (
+       {cats.map((cat,index) => (
 		<CatCard
 			name={cat.name}
 			species={cat.species}
 			favFoods={cat.favFoods}
 			birthYear={cat.birthYear}
+      catIndex={index}
 		/>
 	))};
   
