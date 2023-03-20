@@ -11,7 +11,6 @@ import cat9 from "../assets/images/cat9.jpg";
 import cat10 from "../assets/images/cat10.jpg";
 import cat11 from "../assets/images/cat11.jpg";
 import cat12 from "../assets/images/cat12.jpg";
-
 const images = [
   {
     image: cat1,
@@ -116,7 +115,7 @@ interface CatCardProps {
   favFoods: Array<string>;
   birthYear: number;
   catIndex: number;
-  id?: string
+  
 }
 
 const CatCard: React.FC<CatCardProps> = ({
